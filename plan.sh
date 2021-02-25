@@ -2,7 +2,7 @@ pkg_name=lens-composer-install
 pkg_origin=holo
 pkg_version="1.10"
 pkg_maintainer="Chris Alfano <chris@jarv.us>"
-pkg_license=("MIT")
+pkg_license=("Apache-2.0")
 
 pkg_deps=(
   core/bash
