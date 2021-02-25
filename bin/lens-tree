@@ -1,0 +1,33 @@
+#!/bin/bash -e
+
+INPUT_TREE="${1?<input> required}"
+
+# redirect all output to stderr
+{
+  # export git tree to disk
+  echo "Exporting input tree to scratch directory: ${INPUT_TREE}"
+  git holo lens export-tree "${INPUT_TREE}"
+
+
+  # execute composer-install
+  composer-install
+  install_status=$?
+
+
+  # process result
+  if [ $install_status -ne 0 ]; then
+    echo -e "\ncomposer install failed with exit status ${install_status}"
+    exit ${install_status}
+  fi
+
+  echo
+  echo "composer completed successfully"
+
+
+  # add output to git index
+  git add -f "vendor"
+
+} 1>&2
+
+# output tree hash
+git write-tree

@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+
+# prepare composer install args
+_composer_args="${HOLOLENS_COMPOSER_ARGS}"
+_composer_args="${_composer_args} --no-interaction"
+_composer_args="${_composer_args} --ignore-platform-reqs"
+_composer_args="${_composer_args} --no-plugins"
+_composer_args="${_composer_args} --no-scripts"
+_composer_args="${_composer_args} --prefer-dist"
+_composer_args="${_composer_args} --quiet"
+
+
+echo
+echo "executing: composer install ${_composer_args}"
+# shellcheck disable=SC2086
+composer install ${_composer_args}
