@@ -6,7 +6,7 @@ pkg_license=("Apache-2.0")
 
 pkg_deps=(
   core/bash
-  core/composer/1.10.5
+  jarvus/composer/2.1.9/20211022205258 # pending https://github.com/habitat-sh/core-plans/pull/4194
   jarvus/hologit
 )
 
