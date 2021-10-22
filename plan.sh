@@ -1,6 +1,6 @@
 pkg_name=lens-composer-install
 pkg_origin=holo
-pkg_version="1.10"
+pkg_version="2.1"
 pkg_maintainer="Chris Alfano <chris@jarv.us>"
 pkg_license=("Apache-2.0")
 
